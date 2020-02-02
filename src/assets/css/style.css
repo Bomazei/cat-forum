@@ -1,0 +1,116 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  list-style: none;
+  width: 1140px;
+  margin: 30px auto 0 auto;
+}
+
+.filters {
+  position: fixed;
+  top: 10px;
+  right: 40px;
+  width: 300px;
+  height: 100vh;
+  background-color: lightgray;
+  padding: 20px;
+}
+
+.post {
+  position: relative;
+  background-color: #e0edfd;
+  border: 1px solid lightskyblue;
+  padding: 10px 20px 60px 20px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.post .post-content {
+  margin-left: 10px;
+}
+
+.post .post-content .post-name {
+  color: gray;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.post .post-content .post-title {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.post .post-content .post-body {
+  font-size: 22px;
+}
+
+.post .comment-open {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 200px;
+  color: #00a2ff;
+  font-size: 18px;
+}
+
+.comments {
+  list-style: none;
+  width: 90%;
+  margin: -20px auto 80px auto;
+  position: relative;
+}
+
+.comments .comment {
+  background-color: #e0edfd;
+  border-left: 1px solid lightskyblue;
+  border-right: 1px solid lightskyblue;
+  border-bottom: 1px solid lightskyblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+}
+
+.comments .comment .comment-content {
+  margin-left: 10px;
+}
+
+.comments .comment .comment-content .comment-name {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.comments .comment .comment-content .comment-name:after {
+  content: ' промурчал';
+  white-space: normal;
+  font-size: 18px;
+  color: gray;
+}
+
+.comments .comment .comment-content .comment-body {
+  font-size: 22px;
+}
+
+.comments .comment-close {
+  position: absolute;
+  right: 0;
+  outline: none;
+  border: none;
+  background-color: #e0edfd;
+  width: 200px;
+  color: #00a2ff;
+  font-size: 18px;
+  padding: 4px;
+}
+/*# sourceMappingURL=style.css.map */
