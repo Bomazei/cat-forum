@@ -1,22 +1,22 @@
 <template>
-    <div>
-        <ul class="container">
-            
+    <div class="container">
+        <ul class="posts">  
             <li v-for="post in postsFiltered" :key="post.id">
                 
                 
-                <Post :post="post" :users="users">
+                <Post :post="post" :users="users" v-for="user in usersFiltered" :key="post.id" v-if="post.userId == user.id">
                     
                 </Post>
                 
             </li>
         </ul>
-        <div class="filters">
-            <p class="filters-title">Фильтры:</p>
+        <div class="filter">
+            <p class="filter-title">Фильтры:</p>
             <p class="filter-name">Имя/название</p>
             <input type="text" class="filter-input" v-model="searchName">
             <p class="filter-name">Контент</p>
             <input type="text" class="filter-input" v-model="searchContent">
+    
         </div>
     </div>
   

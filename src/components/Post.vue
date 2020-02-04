@@ -3,12 +3,13 @@
     <div class="post">
         <img src="https://placekitten.com/200/200" alt="post-author">
         <div class="post-content">
-            {{users[post.userId-1].name}}
+            <p class="post-name" v-for="user in users" :key="user.id" v-if="user.id == post.userId">{{user.name}}</p>
+
             <p class="post-title">{{post.title}}</p>
             <p class="post-body">{{post.body}}</p>
         </div>
         
-        <button @click="showComments(post.id), close = true" v-if="!close" class="comment-open">Открыть комментарии</button>
+        <button @click="showComments(post.id, comments), close = true" v-if="!close" class="comment-open">Открыть комментарии</button>
     </div>
     <ul v-if="close" class="comments">
         <li v-for="comment in comments" :key="comment.id" class="comment">
@@ -35,11 +36,17 @@ export default {
         }
     },
     methods:{
-        showComments: function(id){
-        fetch('https://jsonplaceholder.typicode.com/comments?postId='+id)
-        .then(response => (response.json()))
-        .then(json => this.comments = json)
+        showComments: function(id, comments){ 
+            if(this.comments == comments && this.comments != null){
+                return this.comments
+            } else {
+                fetch('https://jsonplaceholder.typicode.com/comments?postId='+id)
+                .then(response => (response.json()))
+                .then(json => this.comments = json)
+               
+            }
         }
+        
     }
 }
 </script>
